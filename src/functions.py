@@ -19,3 +19,19 @@ def gini(array):
     n = len(array)
     index = np.arange(1, n + 1)
     return 2 * np.sum(index * array) / (n * np.sum(array)) - (n + 1) / n
+
+
+def segment_customer(row):
+    r, f, m = row['R_score'], row['F_score'], row['M_score']
+    if r>=4 and f>=4 and m>=4:
+        return 'Champions'
+    elif r >= 3 and f >= 3:
+        return 'Loyal Customers'
+    elif r >= 4 and f <= 2:
+        return 'New Customers'
+    elif r <= 2 and f >= 3:
+        return 'At Risk'
+    elif r <= 2 and f <= 2:
+        return 'Lost'
+    else:
+        return 'Potential Loyalists'
