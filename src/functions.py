@@ -21,17 +21,27 @@ def gini(array):
     return 2 * np.sum(index * array) / (n * np.sum(array)) - (n + 1) / n
 
 
+
 def segment_customer(row):
     r, f, m = row['R_score'], row['F_score'], row['M_score']
-    if r>=4 and f>=4 and m>=4:
-        return 'Champions'
-    elif r >= 3 and f >= 3:
-        return 'Loyal Customers'
-    elif r >= 4 and f <= 2:
-        return 'New Customers'
-    elif r <= 2 and f >= 3:
-        return 'At Risk'
+    # Best customers
+    if r >= 4 and f >= 4 and m >= 4:
+        return "Champions"
+    # Frequent and recent customers
+    elif r >= 3 and f >= 4:
+        return "Loyal Customers"
+    # Recent customers with moderate purchase frequency
+    elif r >= 4 and 2 <= f <= 3:
+        return "Potential Loyalists"
+    # Very recent customers with only one/few purchases
+    elif r >= 4 and f == 1:
+        return "New Customers"
+    # Used to buy frequently but not recently
+    elif r <= 2 and f >= 4:
+        return "At Risk"
+    # Long inactive customers
     elif r <= 2 and f <= 2:
-        return 'Lost'
+        return "Lost"
+    # Everyone else
     else:
-        return 'Potential Loyalists'
+        return "Need Attention"
