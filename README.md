@@ -208,7 +208,7 @@ To reproduce the analysis:
 
 - Download the Online Retail II dataset.    
 - Place the raw dataset in data.    
-- Install the required Python dependencies: '''pip install -r requirements.txt'''    
+- Install the required Python dependencies: ```pip install -r requirements.txt```    
 - Run 01_data_cleaning.ipynb:  this notebook performs the data cleaning and validation steps and creates the SQLite database.    
 - Run 02_business_analysis.ipynb:  this notebook connects to the SQLite database and performs the business analysis.
 
