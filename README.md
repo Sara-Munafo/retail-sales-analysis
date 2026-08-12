@@ -30,7 +30,7 @@ The raw dataset is **not included in this repository**. To reproduce the analysi
 ---
 
 ## Project Structure
-
+```
 online-retail-analysis/
 │
 ├── data/
@@ -58,14 +58,14 @@ online-retail-analysis/
 │
 ├── README.md
 └── requirements.txt
-
+```
 
 ---
 
 ## Data Pipeline
 
 The project follows a simple Extract → Transform → Validate → Load workflow:
-
+```
 Raw CSV
    │
    ▼
@@ -88,7 +88,7 @@ SQL + Python Analysis
    │
    ▼
 Business Insights & Power BI Dashboard
-
+```
 
 ### 1. Data Cleaning & ETL
 
@@ -120,57 +120,31 @@ The second notebook uses the SQLite database and Python (mostly Pandas) to inves
 #### 2.1. Revenue Concentration    
 
 This section investigates how revenue is distributed across customers and products.
-The analysis includes:    
-- Revenue distributions among customers and products    
-- Gini coefficients    
-- Pareto analysis    
+The analysis includes revenue distributions among customers and products, Gini coefficients and Pareto analysis    
 
 #### 2.2 Geographic Analysis
 
-This section analyses the geographic distribution of:    
-- Sales volume    
-- Net revenue    
-- Customers    
+This section analyses the geographic distribution of sales volume, net revenue and customers.    
 
 #### 2.3 Sales Seasonality
 
-Monthly and quarterly trends are analysed for:    
-- Net revenue    
-- Gross revenue    
-- Sales volume    
-- Number of transactions    
-- Average order value (AOV)    
-
+Monthly and quarterly trends are analysed for: net and gross revenue, sales volume, number of transactions, and average order value (AOV).    
 The analysis focuses particularly on the Q4 period and the contribution of different factors to the seasonal revenue peak.    
 
 #### 2.4 Product Performance
 
-Product performance is evaluated through:    
-- Sales volume    
-- Net revenue    
-- Spearman correlation between volume and revenue    
-- log-log analysis & residual analysis    
-
-The residual analysis identifies products whose revenue is substantially higher or lower than expected given their sales volume.    
+Product performance is evaluated through sales volume and net revenue. Spearman correlation between volume and revenue is evaluated, as well as a log-log analysis & residual analysis.    
+The residual analysis allows to identify products whose revenue is substantially higher or lower than expected given their sales volume.    
 This allows the analysis to distinguish between high-volume products and products that generate relatively high revenue per unit.
 
 #### 2.5 Returns Analysis
 
-The returns analysis investigates:    
-- Monthly and quarterly return volume & return rates    
-- Country-level return behaviour    
-- Product-level return behaviour    
-- Anomalous return periods   
-- Relationship between product price and return rate    
-
+The returns analysis investigates: monthly and quarterly return volume & return rates, country-level & product-level return behaviour and anomalous return periods.      
 Several unusual spikes in return activity are investigated individually rather than automatically removed.    
 
 #### 2.6 Customer Analysis
 
-Customer behaviour is analysed using:    
-- Top customers by net revenue    
-- RFM analysis & customer segmentation    
-
+Customer behaviour is analysed through contribution to net revenue, and by performing RFM analysis & customer segmentation.        
 The analysis investigates whether frequent customers also tend to generate higher-value orders and identifies the customer segments contributing most to total revenue.
 
 
